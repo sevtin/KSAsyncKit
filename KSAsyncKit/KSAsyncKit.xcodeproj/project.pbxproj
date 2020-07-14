@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1C3DBA6D7080D4CF43041E /* libPods-KSAsyncKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E56B66173F0F0C735F89B59A /* libPods-KSAsyncKit.a */; };
 		E6A9D5E024BD8B1C00952192 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A9D5DF24BD8B1C00952192 /* AppDelegate.m */; };
 		E6A9D5E324BD8B1C00952192 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A9D5E224BD8B1C00952192 /* ViewController.m */; };
 		E6A9D5E624BD8B1C00952192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6A9D5E424BD8B1C00952192 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9759B78F034014F521C46998 /* Pods-KSAsyncKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSAsyncKit.release.xcconfig"; path = "Target Support Files/Pods-KSAsyncKit/Pods-KSAsyncKit.release.xcconfig"; sourceTree = "<group>"; };
+		C53A44EE22C2F80CCA64E9BE /* Pods-KSAsyncKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KSAsyncKit.debug.xcconfig"; path = "Target Support Files/Pods-KSAsyncKit/Pods-KSAsyncKit.debug.xcconfig"; sourceTree = "<group>"; };
+		E56B66173F0F0C735F89B59A /* libPods-KSAsyncKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KSAsyncKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A9D5DB24BD8B1C00952192 /* KSAsyncKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSAsyncKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A9D5DE24BD8B1C00952192 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6A9D5DF24BD8B1C00952192 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F1C3DBA6D7080D4CF43041E /* libPods-KSAsyncKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55388A5C1C34A751429D1459 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C53A44EE22C2F80CCA64E9BE /* Pods-KSAsyncKit.debug.xcconfig */,
+				9759B78F034014F521C46998 /* Pods-KSAsyncKit.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CCA00F875C6EDB926ABF9491 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E56B66173F0F0C735F89B59A /* libPods-KSAsyncKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E6A9D5D224BD8B1C00952192 = {
 			isa = PBXGroup;
 			children = (
 				E6A9D5DD24BD8B1C00952192 /* KSAsyncKit */,
 				E6A9D5DC24BD8B1C00952192 /* Products */,
+				55388A5C1C34A751429D1459 /* Pods */,
+				CCA00F875C6EDB926ABF9491 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6A9D5F124BD8B1F00952192 /* Build configuration list for PBXNativeTarget "KSAsyncKit" */;
 			buildPhases = (
+				479A9CC0E4D4546F0EA5CD70 /* [CP] Check Pods Manifest.lock */,
 				E6A9D5D724BD8B1C00952192 /* Sources */,
 				E6A9D5D824BD8B1C00952192 /* Frameworks */,
 				E6A9D5D924BD8B1C00952192 /* Resources */,
@@ -135,6 +161,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		479A9CC0E4D4546F0EA5CD70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KSAsyncKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6A9D5D724BD8B1C00952192 /* Sources */ = {
@@ -281,6 +332,7 @@
 		};
 		E6A9D5F224BD8B1F00952192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C53A44EE22C2F80CCA64E9BE /* Pods-KSAsyncKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +349,7 @@
 		};
 		E6A9D5F324BD8B1F00952192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9759B78F034014F521C46998 /* Pods-KSAsyncKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
