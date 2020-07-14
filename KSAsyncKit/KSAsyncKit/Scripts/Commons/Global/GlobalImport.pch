@@ -1,0 +1,14 @@
+//
+//  GlobalImport.pch
+//  KSAsyncKit
+//
+//  Created by saeipi on 2020/7/14.
+//  Copyright © 2020 saeipi. All rights reserved.
+//
+
+#ifndef GlobalImport_pch
+#define GlobalImport_pch
+
+#define KSWeakSelf __weak typeof(self) weakSelf = self;
+
+#endif /* GlobalImport_pch */
